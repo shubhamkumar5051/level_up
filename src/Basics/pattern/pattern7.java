@@ -1,14 +1,15 @@
 package Basics.pattern;
+
 import java.util.Scanner;
-public class pattern1 {
+
+public class pattern7{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int row = sc.nextInt();
-        int col = sc.nextInt();
+        int outerLoop = sc.nextInt();
 
-        for(int i=0;i<row;i++){
-            for(int j=0;j<col;j++){
-                System.out.print("*");
+        for (int i = outerLoop ; i>0; i--){
+            for (int j =0; j<i; j++){
+                System.out.print(j+1);
             }
             System.out.println();
         }
