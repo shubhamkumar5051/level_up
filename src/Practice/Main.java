@@ -2,30 +2,23 @@ package Practice;
 
 public class Main {
     public static void main(String[] args) {
+        int [] arr= {3,2,16,7,19,1};
 
-        int [] arr= {3,2,6,7,19,1};
-        int swapindex = 0;
-        for (int i=0;i<arr.length;i++)
-        {
-            int mini = arr[i];
-            swapindex = i;
-            for (int j=i+1;j<arr.length;j++)
-            {
-                if(arr[j] <= mini)
-                {
-                    mini = arr[j];
-                    swapindex = j;
-                }
+        //insertion sort:- pick the element from unsorted array and place them at right place in sorted array
+
+        for(int i=0;i<arr.length;i++){
+            int j=i;
+            while( j>0 && arr[j-1]>arr[j]){
+                int temp =arr[j];
+                arr[j]=arr[j-1];
+                arr[j-1]=temp;
+                j--;
             }
-            //swap
-            int temp = arr[i];
-            arr[i] = arr[swapindex];
-            arr[swapindex] = temp;
         }
 
-        for (int x :arr)
-        {
-            System.out.println(x);
+        for(int x : arr){
+            System.out.print(x+" ");
         }
+
     }
 }
